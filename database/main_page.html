@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+        <title>Web App</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">My web app</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="row">
+                <form action="." method="POST">
+
+					{% for food in foods %}
+					    <input class="item" type="checkbox" name="items" value="{{ food.id }}" /> {{ food.name }} @ ${{ food.price }}<br />
+				    {% endfor %}
+					<br /><br />
+
+                    <input name="cost" type="submit" value="How much?" /> Total cost = ${{ result }}<br />
+                    {{ bought|safe }}
+
+                    <h2>Add New Food</h2>
+                    <label for="item">Item</label>&nbsp;
+					<input name="item" />
+					&nbsp;&nbsp;
+				    <label for="price">Price</label>&nbsp;
+					<input name="price" />
+					&nbsp;&nbsp;
+                    <input name="insert" type="submit" value="Add!" />
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>
