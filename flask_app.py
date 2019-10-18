@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.config["DEBUG"] = True
 
 SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
-    username="your-own-username",
+    username="your-own-name-and-class",
     password="your-own-password",
     hostname="dhsstudent1.mysql.pythonanywhere-services.com",
     databasename="dhsstudent1$comments",
